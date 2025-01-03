@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Mouse</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 50px;
+                background-color: #f0f0f0;
+            }
+            #originalContent{
+                width: 300px;
+                height: 300px;
+                margin: auto;
+                background-color: lightblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                cursor: pointer;
+                border: 2px solid #007Bff;
+            }
+            #newContent{
+                display: none;
+                margin-top: 20px;
+                font-size: 18px;
+                color: #007Bff;
+
+            }
+            #newImage{
+                width: 100%;
+                max-width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="originalContent">
+            Hover over me!
+        </div>
+        <div id="newContent">
+            <img id="newImage" src="college3.jpeg" alt="New Image">
+            <p id="newText"></p>
+        </div>
+        <script>
+            const originalContent=document.getElementById("originalContent");
+            const newContent=document.getElementById("newContent");
+            const newImage=document.getElementById("newImage");
+            const newText=document.getElementById("newText");
+
+            const hoverImageSrc="college3.jpeg"
+            const hoverText="You hovered over the content! Here's a new image";
+
+            originalContent.addEventListener("mouseover",function(){
+                newImage.src=hoverImageSrc;
+                newText.textContent=hoverText;
+
+                newContent.style.display="block";
+            });
+            originalContent.addEventListener("mouseout",function(){
+                newContent.style.display="none"
+            });
+        </script>
+    </body>
+</html>
